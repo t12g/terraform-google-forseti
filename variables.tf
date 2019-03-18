@@ -91,6 +91,17 @@ variable "server_ssh_allow_ranges" {
   default     = ["0.0.0.0/0"]
 }
 
+variable "server_tags" {
+  description = "GCE Forseti Server VM Tags"
+  type        = "list"
+  default     = [""]
+}
+
+variable "server_private" {
+  description = "Private GCE Forseti Server VM (no public IP)"
+  default     = false
+}
+
 #---------------------------------#
 # Forseti server config inventory #
 #---------------------------------#
@@ -228,6 +239,7 @@ variable "iam_disable_polling" {
   description = "Whether to disable polling for IAM API"
   default     = "False"
 }
+
 variable "logging_max_calls" {
   description = "Maximum calls that can be made to Logging API"
   default     = "9"
@@ -242,6 +254,7 @@ variable "logging_disable_polling" {
   description = "Whether to disable polling for Logging API"
   default     = "False"
 }
+
 variable "securitycenter_max_calls" {
   description = "Maximum calls that can be made to Security Center API"
   default     = "1"
@@ -571,6 +584,17 @@ variable "client_ssh_allow_ranges" {
   description = "List of CIDRs that will be allowed ssh access to forseti client"
   type        = "list"
   default     = ["0.0.0.0/0"]
+}
+
+variable "client_tags" {
+  description = "GCE Forseti Client VM Tags"
+  type        = "list"
+  default     = [""]
+}
+
+variable "client_private" {
+  description = "Private GCE Forseti Client VM (no public IP)"
+  default     = false
 }
 
 #------------#
