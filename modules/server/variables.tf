@@ -536,7 +536,7 @@ variable "server_instance_metadata" {
 variable "server_tags" {
   description = "VM instance tags"
   type        = "list"
-  default     = [""]
+  default     = []
 }
 
 variable "server_access_config" {
